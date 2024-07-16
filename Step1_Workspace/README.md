@@ -1,11 +1,11 @@
-## Introduction 
+# Introduction 
 
 1. Illustrate the components of a C++ workspace and demonstrates the build process shown below
 ![alt text](CPP_compilation.png)
 2. Set up a Visual Studio workspace to build, run, and debug code. 
 3. Employ colcon to manage builds. 
 
-## Process 
+# Process 
 1. Install VS Code 
      https://code.visualstudio.com/download
 2. Set up VS Code for C++ in Linux
@@ -32,17 +32,19 @@
      6.3 Commit code
           `git add .`
           `git commit -m "Say Hello World"`
-     6.4 Push to GitHub
-7. Link code to an External Library. We'll use Eigen.        
+     6.4 Push to GitHub (optional and homework) 
+
+7. Link code to an External Library. We'll use Eigen. 
+            
 
 
-## Components 
+# Components 
 The workspace, aka `${workspaceFolder}`, consists of `.vscode`, `.git`, and `src` folders, as well as top-level files such as this Readme
 
-### Software 
+## Software 
 1. HelloWorld.cpp contains a main() function that prints Hello World. To build HelloWorld.cpp into and executable and run it
 
-### Configurations
+## Configurations
 These are all defined in 
 1. c_cpp_properties.json specifies the settings and properties for the C/C++ language extension in Visual Studio Code. It allows you to customize various aspects of your C/C++ development environment, such as include paths, compiler options, and IntelliSense settings. 
     - The ${workspaceFolder} represents this folder, the root folder of your workspace.  
@@ -50,7 +52,7 @@ These are all defined in
 3. launch.json outlines the process that runs in VS Code when Run/Debug (F5) is executed. It specifies which debugger to us, which executable to run, and the arguments for the executable. It also identifies any preLaunch tasks, such as compiling the code that gets debugged. preLaunch tasks may be defined in tasks.json.  
 
 
-## References 
+# References 
 1. VS Code tutorials for getting started with C++ are detailed and up to date: https://code.visualstudio.com/docs/cpp/introvideos-cpp 
 2. Mike Shah has great video that details the C++ compilation process: https://www.youtube.com/watch?v=ksJ9bdSX5Yo&t=1924s. I highly recommend this channel for learning and advancing C++ skills. 
 
