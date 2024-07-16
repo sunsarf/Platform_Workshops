@@ -10,7 +10,9 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${workspaceFolder}/${fileBasenameNoExtension}"
+                "${workspaceFolder}/${fileBasenameNoExtension}", 
+                "-I", 
+                "~/Software/eigen",
             ],
             "options": {
                 "cwd": "${fileDirname}"

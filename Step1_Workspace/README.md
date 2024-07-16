@@ -34,10 +34,16 @@
           `git commit -m "Say Hello World"`
      6.4 Push to GitHub (optional and homework) 
 
-7. Link code to an External Library. We'll use Eigen. 
-            
-
-
+7. Link code to an External Library outside the workspace. We'll use Eigen: A C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms.
+     7.1 Download Eigen to `~/Software`, i.e. outside this workspace
+          `git clone https://gitlab.com/libeigen/eigen.git`
+     7.2 Write a program `EigenAdd.cpp` to initialize a 2x2 matrix, assign numbers to 3 of its elements, and set a fourth to a sum of two elements. The code also prints the elements of the matrix when run.
+     7.3 Build and execute `EigenAdd.cpp` by including the Eigen libraries, using the -I option
+            `g++ -I ~/Software/eigen src/EigenAdd.cpp -o EigenAdd`
+            `./EigenAdd`
+8. Update VS Code configurations to include the Eigen external library 
+     8.1 Add `"~/Software/eigen/**"` to `c_cpp_properties.json` so that Intellisense has knowlege of the headers. 
+     8.2 Add 
 # Components 
 The workspace, aka `${workspaceFolder}`, consists of `.vscode`, `.git`, and `src` folders, as well as top-level files such as this Readme
 
