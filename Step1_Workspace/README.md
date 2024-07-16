@@ -43,20 +43,27 @@
             `./EigenAdd`
 8. Update VS Code configurations to include the Eigen external library 
      8.1 Add `"~/Software/eigen/**"` to `c_cpp_properties.json` so that Intellisense has knowlege of the headers. 
-     8.2 Add 
+     8.2 Update the g++ command defined in `task.json` to include `"~/Software/eigen/**"`
+9. Define build parameters in `CMakeLists.txt` and compile both `HelloWorld.cpp` and `EigenAdd.cpp` into their respective executables.
+     9.1 Write `CMakeLists.txt` 
+     9.2 Create the build system by running this from the worspace's parent folder `cmake Step1_Workspace`. This step creates the build system binaries, such as the Makefile
+     9.3 cd back into the workspace and use the build system binaries to build the code in the workspace with `cmake --build .` 
+          - Confirm that executables for HelloWorld and EigenAdd are created
 # Components 
 The workspace, aka `${workspaceFolder}`, consists of `.vscode`, `.git`, and `src` folders, as well as top-level files such as this Readme
 
 ## Software 
-1. HelloWorld.cpp contains a main() function that prints Hello World. To build HelloWorld.cpp into and executable and run it
+1. src/HelloWorld.cpp contains a main() function that prints Hello World. To build HelloWorld.cpp into and executable and run it
+2. src/EigenAdd.cpp contains a main() function to initialize a 2x2 matrix, define, and print out its elements
 
 ## Configurations
-These are all defined in 
+The following configurations pertain to VS Code and are defined in the .vscode folder
 1. c_cpp_properties.json specifies the settings and properties for the C/C++ language extension in Visual Studio Code. It allows you to customize various aspects of your C/C++ development environment, such as include paths, compiler options, and IntelliSense settings. 
     - The ${workspaceFolder} represents this folder, the root folder of your workspace.  
 2. tasks.json defines tasks that run when the user clicks Run or Run and Debug in VS Code. Run tasks can range from building your project, running scripts, launching external programs, to running custom commands. In this project, task.json defines the g++ command that is executed to build the code. 
 3. launch.json outlines the process that runs in VS Code when Run/Debug (F5) is executed. It specifies which debugger to us, which executable to run, and the arguments for the executable. It also identifies any preLaunch tasks, such as compiling the code that gets debugged. preLaunch tasks may be defined in tasks.json.  
 
+CMakeLists.txt holds the build configurations, including the versions CMake and C++ versions, the location of dependencies, compiler arguments, and the names of executables. 
 
 # References 
 1. VS Code tutorials for getting started with C++ are detailed and up to date: https://code.visualstudio.com/docs/cpp/introvideos-cpp 
