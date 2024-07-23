@@ -44,9 +44,13 @@
 8. Update VS Code configurations to include the Eigen external library 
      1. Add `"~/Software/eigen/**"` to `c_cpp_properties.json` so that Intellisense has knowlege of the headers. 
      2. Update the g++ command defined in `task.json` to include `"~/Software/eigen/**"`
-9. Define header files 
+9. Set up extensions: Use `Ctrl + Shift + P` to go to the Command Pallete. Extension settings are recorded in `.vscode/settings.json`. 
+     1. C/C++ Extension Pack 
+     2. GitLens
+     3. GitHub Copilot
+10. Define header files 
      1. Move HelloWorld implementation into a class with a header and C++ file
-10. Add unit tests
+     2. Define methods to say "Hello World" and "Hola Mundo"
 11. Define build parameters in `CMakeLists.txt` and compile both `HelloWorld.cpp` and `EigenAdd.cpp` into their respective executables.
      1. Write `CMakeLists.txt` 
      2. Make build system binaries, such as the Makefile, in the `build` folder. 
@@ -56,10 +60,17 @@
      3. Build CMake binaries into executables. Within the build folder run
           - `cmake --build .`
           - Confirm that executables for HelloWorld and EigenAdd are created in the build folder
-12. Set up extensions: Use `Ctrl + Shift + P` to go to the Command Pallete. Extension settings are recorded in `.vscode/settings.json`. 
-     12.1 C/C++ Extension Pack 
-     12.2 GitLens
-     12.3 GitHub Copilot
+12. Add Unit Tests 
+     1. Create a tests folder 
+     2. Define `HelloWorldTest.cpp` to test the `inEnglish()` and `inSpanish()` outputs
+     3. Update `CMakeLists.txt` to fetch GTest and build `HelloWorldTest`, the executable that runs google tests
+     4. Clean and rebuild from the `build` folder, this time with tests
+          - `make clean`
+          - `cmake ..`
+          - `cmake --build .`
+     5. Run the tests `./HelloWorldTest`
+     6. If all tests pass, then celebrate. Else, iterate!
+
 # Components 
 The workspace, aka `${workspaceFolder}`, consists of `.vscode`, `.git`, and `src` folders, as well as top-level files such as this Readme
 
