@@ -11,44 +11,55 @@
 2. Set up VS Code for C++ in Linux
      https://code.visualstudio.com/docs/cpp/config-wsl
     While Windows is a perfectly acceptable environment for C++ in general, it is worthwhile to set up for Linux because most open source robotics applications are better supported in Linux. 
-     2.1 Install WSL Extension for VS Code: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl
-     2.2 Install WSL in Windows: `wsl --install` in Powershell. Write down your username and password!! 
+     1. Install WSL Extension for VS Code: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl
+     2. Install WSL in Windows: `wsl --install` in Powershell. Write down your username and password!! 
 3. Set up Hello World Workspace in `Linux/Ubuntu/home/<username>` folder
-     `mkdir Software/HelloWorld/src`
+     - `mkdir Software/HelloWorld/src`
 4. Write compile and run C++ code 
-     4.1 `touch HelloWorld.cpp`
-     4.2 Write main function that prints Hello World
-     4.3 Compile code into executable, see [References][2]: `g++ -o HelloWorld src/HelloWorld.cpp`
-     4.4 Run executable: `./HelloWorld`
-     4.3 Celebrate! 
+     1. `touch HelloWorld.cpp`
+     2. Write main function that prints Hello World
+     3. Compile code into executable, see [References][2]: `g++ -o HelloWorld src/HelloWorld.cpp`
+     4. Run executable: `./HelloWorld`
+     5. Celebrate! 
 5. Set up VS Code configurations. See [Components/Configurations] 
-     5.1 Test Run[Ctrl+F5] and Debug[F5] 
+     1. Test Run[Ctrl+F5] and Debug[F5] 
 6. Set up version control. We'll use Git.
-     6.1 Install Git 
-         `sudo apt install git-all`
-         `git --version`
-     6.2 Create a repository for HelloWorld. In the HelloWorld folder.
-         `git init`
-     6.3 Commit code
-          `git add .`
-          `git commit -m "Say Hello World"`
-     6.4 Push to GitHub (optional and homework) 
+     1. Install Git 
+          - `sudo apt install git-all`
+          - `git --version`
+     2. Create a repository for HelloWorld. In the HelloWorld folder.
+          - `git init`
+     3. Commit code
+          -  `git add .`
+          -  `git commit -m "Say Hello World"`
+     4. Push to GitHub (optional and homework) 
 
 7. Link code to an External Library outside the workspace. We'll use Eigen: A C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms.
-     7.1 Download Eigen to `~/Software`, i.e. outside this workspace
-          `git clone https://gitlab.com/libeigen/eigen.git`
-     7.2 Write a program `EigenAdd.cpp` to initialize a 2x2 matrix, assign numbers to 3 of its elements, and set a fourth to a sum of two elements. The code also prints the elements of the matrix when run.
-     7.3 Build and execute `EigenAdd.cpp` by including the Eigen libraries, using the -I option
-            `g++ -I ~/Software/eigen src/EigenAdd.cpp -o EigenAdd`
-            `./EigenAdd`
+     1. Download Eigen to `~/Software`, i.e. outside this workspace
+          - `git clone https://gitlab.com/libeigen/eigen.git`
+     2. Write a program `EigenAdd.cpp` to initialize a 2x2 matrix, assign numbers to 3 of its elements, and set a fourth to a sum of two elements. The code also prints the elements of the matrix when run.
+     3. Build and execute `EigenAdd.cpp` by including the Eigen libraries, using the -I option
+          - `g++ -I ~/Software/eigen src/EigenAdd.cpp -o EigenAdd`
+          - `./EigenAdd`
 8. Update VS Code configurations to include the Eigen external library 
-     8.1 Add `"~/Software/eigen/**"` to `c_cpp_properties.json` so that Intellisense has knowlege of the headers. 
-     8.2 Update the g++ command defined in `task.json` to include `"~/Software/eigen/**"`
-9. Define build parameters in `CMakeLists.txt` and compile both `HelloWorld.cpp` and `EigenAdd.cpp` into their respective executables.
-     9.1 Write `CMakeLists.txt` 
-     9.2 Create the build system by running this from the worspace's parent folder `cmake Step1_Workspace`. This step creates the build system binaries, such as the Makefile
-     9.3 cd back into the workspace and use the build system binaries to build the code in the workspace with `cmake --build .` 
-          - Confirm that executables for HelloWorld and EigenAdd are created
+     1. Add `"~/Software/eigen/**"` to `c_cpp_properties.json` so that Intellisense has knowlege of the headers. 
+     2. Update the g++ command defined in `task.json` to include `"~/Software/eigen/**"`
+9. Define header files 
+     1. Move HelloWorld implementation into a class with a header and C++ file
+10. Add unit tests
+11. Define build parameters in `CMakeLists.txt` and compile both `HelloWorld.cpp` and `EigenAdd.cpp` into their respective executables.
+     1. Write `CMakeLists.txt` 
+     2. Make build system binaries, such as the Makefile, in the `build` folder. 
+          - If the build folder does not exist, `mkdir build`
+          - `cd build`
+          - `cmake ..` 
+     3. Build CMake binaries into executables. Within the build folder run
+          - `cmake --build .`
+          - Confirm that executables for HelloWorld and EigenAdd are created in the build folder
+12. Set up extensions: Use `Ctrl + Shift + P` to go to the Command Pallete. Extension settings are recorded in `.vscode/settings.json`. 
+     12.1 C/C++ Extension Pack 
+     12.2 GitLens
+     12.3 GitHub Copilot
 # Components 
 The workspace, aka `${workspaceFolder}`, consists of `.vscode`, `.git`, and `src` folders, as well as top-level files such as this Readme
 

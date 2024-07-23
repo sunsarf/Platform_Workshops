@@ -1,11 +1,24 @@
+
+#include "HelloWorld.hpp"
 #include <iostream>
- 
 using namespace std;
 
-int main( int argc, char** argv )
+
+
+HelloWorld::HelloWorld()
 {
- 
- cout<<"Hello World \n";
- 
- return 0;
+}
+
+HelloWorld::~HelloWorld()
+{
+}   
+
+void HelloWorld::inEnglish()
+{
+    cout << "Hello World" << endl;
+}
+
+void HelloWorld::inSpanish()
+{
+    cout << "Hola Mundo" << endl;
 }

@@ -9,5 +9,7 @@ add_compile_options(-Wall -Wextra -Wpedantic)
 # Include Eigen directories
 include_directories(../../eigen)
 
-add_executable(HelloWorld src/HelloWorld.cpp)
+add_executable(HelloWorld src/run_helloworld.cpp src/HelloWorld.cpp)
+target_include_directories(HelloWorld PRIVATE include/HelloWorld)
+
 add_executable(EigenAdd src/EigenAdd.cpp)
