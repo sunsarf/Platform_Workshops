@@ -75,8 +75,10 @@
 The workspace, aka `${workspaceFolder}`, consists of `.vscode`, `.git`, and `src` folders, as well as top-level files such as this Readme
 
 ## Software 
-1. src/HelloWorld.cpp contains a main() function that prints Hello World. To build HelloWorld.cpp into and executable and run it
-2. src/EigenAdd.cpp contains a main() function to initialize a 2x2 matrix, define, and print out its elements
+1. src/run_helloWorld.cpp contains a main() function that prints Hello World in English and Spanish. 
+2. include/HelloWorld/HelloWorld.hpp and src/HelloWorld.cpp define and implement a HelloWorld class, respectively. The HelloWorld class contains methods to print "Hello World" and "Hola Mundo"
+4. tests/HelloWorldTest.cpp contais unit tests for the HelloWorld application.
+3. src/EigenAdd.cpp contains a main() function to initialize a 2x2 matrix, define, and print out its elements
 
 ## Configurations
 The following configurations pertain to VS Code and are defined in the .vscode folder
@@ -89,6 +91,7 @@ CMakeLists.txt holds the build configurations, including the versions CMake and 
 
 # References 
 1. VS Code tutorials for getting started with C++ are detailed and up to date: https://code.visualstudio.com/docs/cpp/introvideos-cpp 
+     1. [Keyboard Shortcuts](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 2. Mike Shah has great video that details the C++ compilation process: https://www.youtube.com/watch?v=ksJ9bdSX5Yo&t=1924s. I highly recommend this channel for learning and advancing C++ skills. 
 
  
