@@ -1,0 +1,9 @@
+
+services:
+  robotics:
+    image: osrf/ros:jazzy-desktop-full-noble
+    container_name: ros_jazzy
+    volumes:
+      - ~/Software/Platform_Workshops/Step3_Orchestrate/:/robotics_workspace/
+    stdin_open: true
+    tty: true
