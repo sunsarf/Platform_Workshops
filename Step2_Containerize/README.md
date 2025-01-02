@@ -2,6 +2,9 @@
 
 Run Python application in a virtual environment defined by Docker. 
 
+# Watch and Learn 
+https://youtu.be/He57W-Kxeu0?si=E7K1rcasNkwK3vGS 
+
 # Process 
 1. Install Docker
     1. Install the VS Code Docker Extension, `ms-azuretools.vscode-docker`
