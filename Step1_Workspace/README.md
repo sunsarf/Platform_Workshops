@@ -3,7 +3,10 @@
 1. Illustrate the components of a C++ workspace and demonstrates the build process shown below
 ![alt text](CPP_compilation.png)
 2. Set up a Visual Studio workspace to build, run, and debug code. 
-3. Employ colcon to manage builds. 
+3. Employ colcon to manage builds.
+   
+# Watch and Learn
+https://youtu.be/LUlVJ-QSn5w?si=xHzcks8EZCoeY1rB
 
 # Process 
 1. Install VS Code 
