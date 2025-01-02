@@ -3,6 +3,9 @@
 Create a robotics workspace that can be used as a starting point for a variety of robotics platform. 
 Create Python and C++ applications that communicate with each other through ROS2. 
 
+# Watch and Learn 
+https://youtu.be/P3tCqSTBhc0?si=25qKr9uhMl8uqlA7 
+
 # Process
 1. Write a compose.yaml file that pulls a Docker image with the Ubuntu 24.04 OS (Noble Numbat), ROS2 Jazzy Jalisco and its most widely used packages and GUIs, from the Docker registry and defines a persistent volume for the robotics workspace. For more about Docker, go to Part 2 of the platform workshop.[Containerize](https://github.com/sunsarf/Platform_Workshops/tree/main/Step2_Containerize)
 2. Bring up a container using this Docker image by executing `docker compose up` from the folder containing the `compose.yaml` file. 
